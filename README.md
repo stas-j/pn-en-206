@@ -1,5 +1,5 @@
 2021
-App created by Jakub K.
+App created by Jakub S. or K. nvmd
 
 App created using standard HTML, CSS, JS (ES6) and JSON for easier data access.
 
