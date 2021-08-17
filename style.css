@@ -1,0 +1,259 @@
+:root {
+  color: hsl(0, 0%, 25.9%);
+  font-size: 1em;
+  font-family: 'Titillium Web', sans-serif;
+  --accent: hsla(31, 86%, 75%, .75);
+  /* --accent:hsla(19, 100%, 84%, 0.8); */
+  /* --accent:hsla(18, 63%, 65%, 0.8); */
+  --transition-speed: 100ms;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+}
+
+nav {
+  /* navbar sticked to left site */
+  position: fixed;
+  transition: width 300ms cubic-bezier(.46, .03, .52, .96);
+}
+
+.app {
+  margin: 0;
+  padding: 0;
+  min-width: 100vw;
+  min-height: 100vh;
+  color: var(--text);
+  background: var(--bg);
+}
+
+.content-wrapper > span {
+  margin-top: .5rem;
+}
+
+.accent {
+  background-color: var(--accent);
+}
+
+.nav-items {
+  /* no decorations, padding or margin */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.nav-item {
+  width: 100%;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  height: 3rem;
+  color: var(--text);
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 200ms ease;
+}
+
+.nav-link:hover {
+  background-color: hsla(147, 42%, 84%, 0.7);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* span with nav opt description */
+.link-txt {
+  display: none;
+  margin-left: .75rem;
+  white-space: nowrap; /*prevent from breaking into separate rows*/
+}
+
+.nav-link {
+  justify-content: center;
+}
+
+
+
+.btn {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 15%;
+  z-index: 1;
+  font-size: 1.5rem;
+  font-weight: 200;
+  display: grid;
+  place-items: center;
+  background: hsla(255, 0%, 0%, 0.0);
+  color: var(--btn-clr);
+  animation: opn 2s 1;
+  transition: font-size 200ms;
+}
+
+.btn:hover {
+  font-size: 2rem;
+}
+
+/* this animation shows up controll areas on entrance */
+@keyframes opn {
+  from {
+    background-color: hsla(255, 0%, 0%, 0.0)
+  }
+
+  50% {
+    background-color: hsla(255, 0%, 0%, 0.3)
+  }
+
+  to {
+    background-color: hsla(255, 0%, 0%, 0.0)
+  }
+}
+
+.next {
+  right: 0;
+}
+.prev {
+  left: 0;
+}
+
+.name {
+  width: 5rem;
+  height: 5rem;
+  font-size: 2rem;
+  border-radius: 3px;
+  box-shadow: 2px 2px 3px black;
+  display: grid;
+  place-content:center;
+}
+
+.cat {
+  text-transform: uppercase;
+  box-sizing: border-box;
+  height: 3rem;
+  font-weight: bold;
+}
+
+.content-wrapper {
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  user-select: none;
+  height: 100%;
+}
+
+/* mobile devices */
+@media only screen and (max-width:700px) {
+  body {
+    flex-direction: column;
+  }
+  main {
+    margin: 0;
+    flex-grow: 1;
+  }
+  nav {
+    width: 100vw;
+    height: 4rem;
+    bottom: 0;
+    z-index: 2;
+  }
+
+  .nav-items {
+    flex-direction: row;
+  }
+
+  .nav-items:last-child {
+    align-self: flex-end;
+  }
+
+  .nav-item {
+    height: 100%;
+  }
+
+  .nav-link {
+    height: 100%;
+  }
+
+  .content-wrapper {
+    padding: .5rem 1.5rem;
+    flex-grow: 1;
+    z-index: 2;
+  }
+
+
+}
+
+/* desktop devices */
+@media only screen and (min-width:701px) {
+  body {
+    /* display: flex; */
+    /* flex-direction: row; */
+  }
+
+  main {
+    margin-left: 5rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-grow: 1;
+    position: relative;
+  }
+
+  span {
+    max-width: 60%;
+  }
+
+  nav {
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 5rem;
+    height: 90vh;
+    z-index: 3;
+  }
+
+  nav:hover {
+    width: 16rem;
+  }
+
+  nav:hover .link-txt {
+    display: inline-block;
+  }
+
+  .nav-item:last-child {
+    margin-top: auto;
+  }
+
+  .content-wrapper {
+    width: 90%;
+    padding: 1.5rem;
+    box-sizing: border-box;
+  }
+
+  .nav-item {
+    width: 100%;
+    margin: .5rem;
+  }
+}
+
+/* theme coolors */
+.light {
+  --btn-clr: hsla(182, 0%, 0%, .65);
+  --bg: hsla(182, 82%, 93%, .5);
+  --text: hsla(240, 9%, 13%, 1);
+}
+
+.dark {
+  --btn-clr: hsl(182, 100%, 100%, .65);
+  --bg: hsla(240, 7%, 19%, 1);
+  --text: white;
+}
