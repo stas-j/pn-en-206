@@ -28,7 +28,7 @@ nav {
   background: var(--bg);
 }
 
-.content-wrapper > span {
+.content-wrapper>span {
   margin-top: .5rem;
 }
 
@@ -71,14 +71,13 @@ nav {
 .link-txt {
   display: none;
   margin-left: .75rem;
-  white-space: nowrap; /*prevent from breaking into separate rows*/
+  white-space: nowrap;
+  /*prevent from breaking into separate rows*/
 }
 
 .nav-link {
   justify-content: center;
 }
-
-
 
 .btn {
   position: absolute;
@@ -118,6 +117,7 @@ nav {
 .next {
   right: 0;
 }
+
 .prev {
   left: 0;
 }
@@ -129,7 +129,7 @@ nav {
   border-radius: 3px;
   box-shadow: 2px 2px 3px black;
   display: grid;
-  place-content:center;
+  place-content: center;
 }
 
 .cat {
@@ -155,10 +155,12 @@ nav {
   body {
     flex-direction: column;
   }
+
   main {
     margin: 0;
     flex-grow: 1;
   }
+
   nav {
     width: 100vw;
     height: 4rem;
@@ -187,8 +189,6 @@ nav {
     flex-grow: 1;
     z-index: 2;
   }
-
-
 }
 
 /* desktop devices */
@@ -245,15 +245,30 @@ nav {
   }
 }
 
+.contact-icons-wrapper {
+  display: flex;
+  flex-direction: row;
+  font-size: 2.5rem;
+  width: 90%;
+  justify-content: space-around;
+}
+i{
+  color:var(--text) !important;
+}
+a{
+  display: contents;
+}
+
+
 /* theme coolors */
 .light {
   --btn-clr: hsla(182, 0%, 0%, .65);
   --bg: hsla(182, 82%, 93%, .5);
-  --text: hsla(240, 9%, 13%, 1);
+  --text: hsla(240, 9%, 13%, 1) !important;
 }
 
 .dark {
   --btn-clr: hsl(182, 100%, 100%, .65);
   --bg: hsla(240, 7%, 19%, 1);
-  --text: white;
+  --text: white !important;
 }

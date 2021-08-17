@@ -77,27 +77,3 @@ window.addEventListener('keydown', (e) => {
   e.keyCode == 37 ? prev() : " ";
   e.keyCode == 39 ? next() : " ";
 });
-
-// dark / light theme - toggler
-const themeMap = {
-  dark: "light",
-  light: "dark"
-};
-
-//check if local item exist or create one
-const theme = localStorage.getItem('theme')
-  || (tmp = Object.keys(themeMap)[0],
-      localStorage.setItem('theme', tmp),
-      tmp);
-
-const appClass = qs(".app").classList;
-appClass.add(theme);
-
-function toggleTheme() {
-  const current = localStorage.getItem('theme');
-  const next = themeMap[current];
-  appClass.replace(current, next);
-  localStorage.setItem('theme', next);
-}
-
-qs('li[data-set="themeBtn"]').onclick = toggleTheme;
